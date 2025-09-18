@@ -55,13 +55,21 @@ int main()
 {
 
 	int length = fill_array_f(&RESISTORS_CPU, "resistors.txt");
+	cudaMemcpyAsync(RESISTORS_GPU, 
+					RESISTORS_CPU, 
+					length*sizeof(float), 
+					cudaMemcpyHostToDevice);
 	// print_array_f(RESISTORS_CPU, length);
 	
 	printf("\n");
 
 	length = fill_array_f(&CAPACITORS_CPU, "capacitors.txt");
+	cudaMemcpyAsync(CAPACITORS_GPU,
+					CAPACITORS_CPU, 
+					length*sizeof(float), 
+					cudaMemcpyHostToDevice);
 	// print_array_f(CAPACITORS_CPU, length);
-
+	
 	float* test_frequencies;
 
 	length = generate_test_frequencies(&test_frequencies, 
