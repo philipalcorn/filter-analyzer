@@ -14,9 +14,9 @@
 /***** ***** ***** STRUCTS ***** ***** *****/
 typedef struct  
 {
-	float r_main=0;
-	float resistor[6] = {0, 0, 0, 0, 0, 0};
-	float capacitor[6] = {0, 0, 0, 0, 0, 0};
+	// c_0 does not get used in this design.
+	float resistor[7] = {0, 0, 0, 0, 0, 0, 0};
+	float capacitor[7] = {0, 0, 0, 0, 0, 0, 0};
 
 } Circuit;
 /***** ***** ***** GLOBALS ***** ***** *****/
